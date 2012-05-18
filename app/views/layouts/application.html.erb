@@ -1,0 +1,12 @@
+<html>
+	<head><%= stylesheet_link_tag :all%><%=javascript_include_tag :all%>
+
+		<title>Library Management System</title>
+	</head>
+	<body class="bgi">
+		<%=render :partial=>"layouts/header"%>
+		<td valign="top"  > <%=render :partial=>"layouts/menu"%></td>
+		<td style="width:100%;border:3px solid white;display:block;-moz-border-radius:10px;-webkit-border-radius:10px;" valign="top" ><%=yield%></td>
+		<%=render :partial=> "layouts/footer"%>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<table border="0" width="90%" height="100%" style="text-align:center;" >
+	<tr >
+		<td >
+			<%=image_tag("lib_logo.jpg",:width=>'135px',:height=>'100px')%>
+		</td>
+		<td >
+
+            <div >
+                <img src="/images/blue_header.jpg" alt="" id="fullsize" window.onresize = {
+   												 var img = document.getElementById('fullsize');
+   												 img.style.width = "100%";} style="height:100px;width:100%"/>
+           </div>
+
+
+		<div style="text-align:right">
+		<% if !(session[:user_name])%>
+		<span><%= link_to "Sign In",{:controller=>"Users", :action=>"signin"},{:style=>'text-decoration:none;font-size:80%;color:#195E19;margin-right:20px;'}%>&nbsp;</span>
+		<%else%>
+		<span class="err_msg">Welcome <%=session[:user_name]%>&nbsp;&nbsp;&nbsp;&nbsp;
+		<%= link_to "Sign Out",{:controller=>"Users", :action=>"signout"},{:style=>'text-decoration:none;font-size:80%;margin-right:30px;color:#195E19'}%>
+		<%end%></span>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		

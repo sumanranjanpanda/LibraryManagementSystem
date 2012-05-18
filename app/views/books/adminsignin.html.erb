@@ -1,0 +1,37 @@
+<%=stylesheet_link_tag :all%>
+<html>
+<body >
+<center>
+<div class="err_msg">
+	<% if flash[:notice] %>
+		<%=flash[:notice]%>
+	<%end%>
+	<% if flash[:warning] -%>
+		<%= flash[:warning]%>
+	<% end %>
+</div>
+
+<div class="signin-box"  >
+
+<div id="div2" style="color:Steelblue">Sign in</div>
+</br>
+<% form_for :user do |f| %>
+<table >
+	<tr>
+		<td class="des_right" nowrap>Username:</td>
+		<td class="des_left" ><%=f.text_field :username,:size=>25%></td>
+	</tr>
+	<tr>
+		<td class="des_right" nowrap>Password :</td>
+		<td class="des_left" ><%=f.password_field  :password,:size=>25%></td>
+	</tr>
+
+	<tr>
+		<td colspan="2"><br/><center><%=f.submit "Sign in",:class=>"g-button-submit"%></center></td>
+	</tr>
+</table>
+<%end%>
+</div>
+</center>
+</body>
+</html>

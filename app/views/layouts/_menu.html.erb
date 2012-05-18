@@ -1,0 +1,37 @@
+
+<html >
+<head>
+<title>Library Management System</title>
+</head>
+<body>
+<div id="menu">
+ <div id="menubody">
+ <ul id="menulist">
+    <li><%=link_to "Home", :controller=>"Books",:action=>"index"%></li>
+    <li><%=link_to "Books Available", :controller=>"Books",:action=>"show"%></li>
+<% if (session[:user_name] != "suman" && session[:user_name] !=nil)%>
+    <li><%=link_to "My Rented books", :controller=>"Users",:action=>"mybook"%></li>
+    <li><%=link_to "Rent books", :controller=>"Users",:action=>"rentbook"%></li>
+    <li><%=link_to "My Profile", :controller=>"Users",:action=>"profile"%></li>
+<% elsif ((session[:user_name]== "suman"))%>
+    <li><%=link_to "Add books", :controller=>"Books",:action=>"new"%></li>
+    <li><%=link_to "Edit books", :controller=>"Books",:action=>"edit"%></li>
+<%end%>
+    <li><%=link_to "Search Book", :controller=>"Blanks",:action=>"faq"%></li>
+    <li><%=link_to "Order Book", :controller=>"Blanks",:action=>"faq"%></li>
+    <li><%=link_to "Purchase Book", :controller=>"Blanks",:action=>"faq"%></li>
+  </ul>
+</div>
+<div id="menubottom"></div>
+</div>
+<div class="curved" style="height:170px;text-decoration:underline;width:180px;font-variant:small-caps;color:red;margin:40px 15px 5px 2px"><div style="font-size:130%">Notice</div>
+<div style="color:green">
+<marquee onmouseover="this.scrollAmount=0" onmouseout="this.scrollAmount='3'" direction="up" scrollAmount="3" height="130" >
+<div>New Books are coming soon...</div><br/>
+<div>Discount in membership for Dipabali...</div><br/>
+<div>For other details...contact us</div>
+</marquee></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+
+<center>
+<div class="err_msg">
+	<% if @user.errors.count > 0 %>
+		<%= f.error_messages :header_message =>nil, :message => nil %>
+	<% end %>
+</div>
+
+<div  class="signin-box" style="width:500px">
+<fieldset style="-webkit-border-radius :10px;border:1px solid red">
+<legend style="color:red;text-align:center;font-size:150%">My Profile</legend>
+<% form_for(@user,:method=>"post",:url=>{:controller=>"Books",:action=>"index"},:html => { :multipart => true }) do |f| %>
+
+<table >
+	<tr>
+		<td class="des_left" nowrap>Name</td>
+		<td class="des_left" style="font-size:100%">:<%=@user.name%></td>
+				<td style="text-align:right;">	<% if @user.photo.exists? then %>
+										<%= image_tag @user.photo.url(:thumb) %>
+										<%else%>	
+										no photo is uploaded
+										<%end%>
+				
+		</td>
+
+	</tr>
+	<tr>
+		<td class="des_left" nowrap>Occupation</td>
+		<td class="des_left" style="font-size:100%">:<%=@user.occupation%></td>
+	</tr>
+	<tr>
+		<td class="des_left">Gender</td>
+		<td class="des_left" style="font-size:100%">:<%=@user.gender%></td>
+	</tr>
+	<tr>
+		<td class="des_left" nowrap>Age</td>
+		<td class="des_left" style="font-size:100%">:<%=@user.age%></td>
+	</tr>
+	<tr>
+		<td class="des_left" nowrap>Email id</td>
+
+		<td class="des_left" style="font-size:100%">:<%=@user.email%></td>
+	</tr>
+	<tr>
+		<td class="des_left" nowrap>Mobile No</td>
+		<td class="des_left" style="font-size:100%">:<%=@user.mobile%></td>
+	</tr>
+	<tr>
+		<td class="des_left" nowrap>Address</td>
+		<td class="des_left" style="font-size:100%">:<%=@user.address%></td>
+	</tr>
+	<tr>
+		<td class="des_left" nowrap>User Name</td>
+		<td class="des_left" style="font-size:100%">:<%=@user.username%></td>
+	</tr>
+
+	<tr>
+		<td colspan="2"><center><%= link_to "edit",{:controller=>"Users", :action=>"edit"},:class=>"g-button-submit1"%>&nbsp;&nbsp;&nbsp;&nbsp;
+		<%= link_to "back",{:controller=>"Books", :action=>"index"},:class=>"g-button-submit1"%></center></td>
+	</tr>
+</table>
+</fieldset>
+</div>
+</center>
+<%end%>			
+
+

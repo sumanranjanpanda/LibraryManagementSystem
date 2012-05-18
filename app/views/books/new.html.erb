@@ -1,0 +1,47 @@
+<center>
+<% form_for(@book,:method=>"post",:url=>{:controller=>"Books",:action=>"create"}) do |f| %>
+<fieldset style="color:white;height:auto;width:30%;border:0">
+<div style="color:red"><% if @book.errors.count > 0 %>
+		<%= f.error_messages :header_message =>nil, :message => nil %>
+		
+	<% end %></div>
+</fieldset>
+<fieldset style="width:30%;border-color:lightgreen;border-width:1px;" class="xyz">
+<legend style="color:Darkgreen;text-align:center;font-size:150%">Enter Book details</legend>
+<table >
+	<tr>
+		<td class="des_right" nowrap>Book Name:</td>
+		<td class="des_left" style="font-size:50%"><%=f.text_field :name,:placeholder=>"book name....."%></td>
+	</tr>
+	<tr>
+		<td class="des_right" nowrap>Author Name:</td>
+		<td class="des_left" style="font-size:50%"><%=f.text_field :author,:placeholder=>"author name....."%></td>
+	</tr>
+	<tr>
+		<td class="des_right" nowrap>Edition :</td>
+		<td class="des_left" style="font-size:50%"><%=f.text_field :edition,:placeholder=>"Enter edition....."%></td>
+	</tr>
+	<tr>
+		<td class="des_right">Status:</td>
+		<td class="des_left"><%=f.radio_button "status","1" ,:checked=>true%>Available
+					<%=f.radio_button "status","0" %>Not Available</td>
+	</tr>
+	<tr>
+		
+		<td class="des_right" nowrap><%=f.label "No. of copies :"%></td>
+		<td class="des_left" style="font-size:50%"><%=f.text_field :total%></td>
+		
+	</tr>
+	<tr>
+		<td class="des_right" nowrap>Book no. :</td>
+		<td class="des_left" style="font-size:50%"><%=f.text_field "sl_no",:placeholder=>"Enter edition....."%></td>
+	</tr>
+
+	<tr>
+		<td colspan="2"><br/><center><%= f.submit "Save"%></center></td>
+	</tr>
+</table>
+</center>
+<%end%>			
+</fieldset>
+
