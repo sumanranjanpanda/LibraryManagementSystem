@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
    #config.gem "rmagick"
 	config.gem "paperclip", :version => '2.3.4'
+	config.gem "tlsmail"
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -49,12 +50,12 @@ require 'tlsmail'
   
   ActionMailer::Base.smtp_settings = {
     :enable_starttls_auto => true,
-:domain          => "andolasoft.com",
+#:domain          => "andolasoft.com",
 :address         => 'smtp.gmail.com',
     :port            => 587,
     :tls             => true,
     #:authentication  => :plain,
     :authentication  => :login,
-:user_name       => 'webmaster@andolasoft.com',
-:password        => 'Ez2andola' 
+:user_name       => 'sumanranjanpanda100@gmail.com',
+:password        => 'suman@gmail' 
  }
