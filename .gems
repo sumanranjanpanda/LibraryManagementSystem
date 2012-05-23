@@ -22,4 +22,4 @@ sinatra
 tlsmail 
 tzinfo
 vpim 
-will_paginate 
+will_paginate --version=2.3.15
