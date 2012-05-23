@@ -1,25 +1,25 @@
-gem install authlogic 
-gem install builder 
-gem install bundler 
-gem install childprocess 
-gem install cocaine 
-gem install ffi
-gem install i18n 
-gem install launchy
-gem install mime-types 
-gem install multi_json 
-gem install mysql 
-gem install netrc 
-gem install paperclip
-gem install rack
-gem install rails 
-gem install rake 
-gem install rest-client
-gem install rmagick 
-gem install ruby-ole 
-gem install sequel 
-gem install sinatra 
-gem install tlsmail 
-gem install tzinfo
-gem install vpim 
-gem install will_paginate 
+authlogic 
+builder 
+bundler 
+childprocess 
+cocaine 
+ffi
+i18n 
+launchy
+mime-types 
+multi_json 
+mysql 
+netrc 
+paperclip
+rack
+rails 
+rake 
+rest-client
+rmagick 
+ruby-ole 
+sequel 
+sinatra 
+tlsmail 
+tzinfo
+vpim 
+will_paginate 
